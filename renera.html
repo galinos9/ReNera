@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Site</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #333;
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+        }
+        .sidebar button {
+            background-color: #444;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            margin: 10px 0;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+            transition: background-color 0.3s;
+        }
+        .sidebar button:hover {
+            background-color: #555;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <button onclick="showContent('home')">Home</button>
+        <button onclick="showContent('buy')">Buy House</button>
+        <button onclick="showContent('sell')">Sell House</button>
+        <button onclick="showContent('about')">About Us</button>
+    </div>
+    <div class="content" id="content">
+        <h1>Welcome</h1>
+        <p>Select an option from the menu.</p>
+    </div>
+    <script>
+        function showContent(section) {
+            const content = document.getElementById('content');
+            if (section === 'home') {
+                content.innerHTML = '<h1>Home</h1><p>Welcome to our real estate site.</p>';
+            } else if (section === 'buy') {
+                content.innerHTML = '<h1>Buy House</h1><p>Here you can find houses to buy.</p>';
+            } else if (section === 'sell') {
+                content.innerHTML = '<h1>Sell House</h1><p>List your house for sale.</p>';
+            } else if (section === 'about') {
+                content.innerHTML = '<h1>About Us</h1><p>Learn more about our company.</p>';
+            }
+        }
+    </script>
+</body>
+</html>
