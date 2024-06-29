@@ -2,42 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real Estate Site</title>
+    <title>Real Estate in Greece</title>
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             display: flex;
+            height: 100vh;
+            overflow: hidden;
         }
         .sidebar {
-            width: 200px;
-            background-color: #333;
+            width: 250px;
+            background-color: #2c3e50;
             color: white;
-            height: 100vh;
             display: flex;
             flex-direction: column;
-            align-items: center;
             padding-top: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
         }
         .sidebar button {
-            background-color: #444;
+            background-color: #34495e;
             color: white;
             border: none;
             padding: 15px 20px;
-            margin: 10px 0;
+            margin: 10px;
             cursor: pointer;
-            width: 100%;
+            width: 90%;
             text-align: left;
+            border-radius: 5px;
             transition: background-color 0.3s;
         }
         .sidebar button:hover {
-            background-color: #555;
+            background-color: #1abc9c;
         }
         .content {
             flex-grow: 1;
             padding: 20px;
+            background-image: url('https://example.com/greece-bg.jpg');
+            background-size: cover;
+            color: #333;
+            overflow-y: auto;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        p {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .hero {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 5px;
         }
     </style>
 </head>
@@ -49,20 +67,38 @@
         <button onclick="showContent('about')">About Us</button>
     </div>
     <div class="content" id="content">
-        <h1>Welcome</h1>
-        <p>Select an option from the menu.</p>
+        <div class="hero">
+            <h1>Welcome to Greek Real Estate</h1>
+            <p>Explore properties in the beautiful landscapes of Greece.</p>
+        </div>
     </div>
     <script>
         function showContent(section) {
             const content = document.getElementById('content');
             if (section === 'home') {
-                content.innerHTML = '<h1>Home</h1><p>Welcome to our real estate site.</p>';
+                content.innerHTML = `
+                    <div class="hero">
+                        <h1>Home</h1>
+                        <p>Welcome to our real estate site in Greece. Discover stunning properties!</p>
+                    </div>`;
             } else if (section === 'buy') {
-                content.innerHTML = '<h1>Buy House</h1><p>Here you can find houses to buy.</p>';
+                content.innerHTML = `
+                    <div class="hero">
+                        <h1>Buy House</h1>
+                        <p>Find your dream home in the heart of Greece.</p>
+                    </div>`;
             } else if (section === 'sell') {
-                content.innerHTML = '<h1>Sell House</h1><p>List your house for sale.</p>';
+                content.innerHTML = `
+                    <div class="hero">
+                        <h1>Sell House</h1>
+                        <p>List your property and reach potential buyers globally.</p>
+                    </div>`;
             } else if (section === 'about') {
-                content.innerHTML = '<h1>About Us</h1><p>Learn more about our company.</p>';
+                content.innerHTML = `
+                    <div class="hero">
+                        <h1>About Us</h1>
+                        <p>Learn more about our services and expertise in the Greek real estate market.</p>
+                    </div>`;
             }
         }
     </script>
